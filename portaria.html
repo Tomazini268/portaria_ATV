@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vamos programar</title>
+</head>
+<body>
+    <h3>O Sistema de Portaria da TechZone</h3>
+
+     <form name="FormConcatena" action="" method="post">
+        <p>Digite o seu nome: <input type="text" id="f_nome" /><p>
+         <p>Digite o horário: <input type="number" id="f_hora" /><p>
+            <input type="button" name="btn_concatena" value="Confirmar" onclick="concatena()" />
+            <input type="reset" name="btn_cancela" value="Cancelar" />   
+     </form>
+
+    
+      <script>
+        function concatena() {
+            var nomeUsuario = document.getElementById("f_nome").value;
+            var horaAtual = parseInt(document.getElementById("f_hora").value);
+            let autorizados = ["Ana", "Carlos", "Marta", "João", "Leonardo", "Dante", "Gustave"];
+            
+            if (autorizados.includes(nomeUsuario)) {
+                if (horaAtual < 22) {
+                window.alert("Acesso Permitido. Bem-vindo, " + nomeUsuario + "!");
+                } else {
+                window.alert("Acesso Negado: Fora do horário permitido (após as 22h).");
+                }
+            } else {
+                window.alert("Acesso Negado: Usuário não cadastrado.");
+            }
+        }
+      </script>
+    
+</body>
+</html>
